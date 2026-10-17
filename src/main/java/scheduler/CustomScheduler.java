@@ -27,7 +27,6 @@ public class CustomScheduler {
         this.taskQueue = new PriorityQueue<>();
         this.lock = new Object();
         this.isRunning = true;
-
         this.schedulerThread = new Thread(this::run);
         this.schedulerThread.start();
     }

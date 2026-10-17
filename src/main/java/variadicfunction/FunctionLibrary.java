@@ -63,6 +63,5 @@ class FunctionLibrary {
         variadic.forEach((key, value) -> System.out.println(key + ": " + value));
         System.out.println();
         nonVariadic.forEach((key, value) -> System.out.println(key + ": " + value));
-
     }
 }
