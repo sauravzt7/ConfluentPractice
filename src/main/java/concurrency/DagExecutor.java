@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
     this class executes the tasks in a dependency-aware manner using a provided ExecutorService.
  */
 class Task {
-    List<Task> deps = new ArrayList<>(); // list of tasks that this task depends on
+    List<Task> dependencies = new ArrayList<>(); // list of tasks that this task depends on
     List<Integer> dependents = new ArrayList<>(); // indices of tasks that depend on this task
     AtomicInteger remaining = new AtomicInteger(0); // remaining dependencies to execute
     Runnable runnable;
@@ -24,7 +24,7 @@ public class DagExecutor {
     DagExecutor(List<Task> tasks, ExecutorService pool) {
         this.tasks = tasks;
         this.pool = pool;
-        for(Task t : tasks) t.remaining.set(t.deps.size());
+        for(Task t : tasks) t.remaining.set(t.dependencies.size());
     }
 
     // submit tasks that have no remaining dependencies
