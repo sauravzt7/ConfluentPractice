@@ -20,7 +20,7 @@ public class Main {
                 funcA, funcB, funcC, funcD, funcE, funcF, funcG
         ));
 
-        FunctionLibrary library = new FunctionLibrary();
+        FunctionLibraryUsingTrie library = new FunctionLibraryUsingTrie();
         library.register(functionSet);
 
         library.displayMap();
@@ -47,7 +47,7 @@ public class Main {
         runTest(library, Arrays.asList("String", "Integer", "Integer"));
     }
 
-    private static void runTest(FunctionLibrary library, List<String> inputArgs) {
+    private static void runTest(FunctionLibraryUsingTrie library, List<String> inputArgs) {
         List<Function> matches = library.findMatches(inputArgs);
 
         // Extracting just the names for cleaner output matching the prompt
